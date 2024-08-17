@@ -13,7 +13,7 @@ on:
 
 defaults:
   run:
-    working-directory: ./src-tauri
+    working-directory: /src-tauri
 
 jobs:
   test-and-lint-js:

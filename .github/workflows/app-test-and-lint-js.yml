@@ -13,7 +13,7 @@ on:
 
 defaults:
   run:
-    working-directory: ./app
+    working-directory: /app
 
 jobs:
   test-and-lint-js:

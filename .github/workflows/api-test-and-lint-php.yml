@@ -14,7 +14,7 @@ on:
 
 defaults:
   run:
-    working-directory: ./api
+    working-directory: /api
 
 jobs:
   test-and-lint-php:
