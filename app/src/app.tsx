@@ -1,7 +1,8 @@
 import { invoke } from '@tauri-apps/api/core'
 import { createSignal } from 'solid-js'
 import logo from './assets/logo.svg'
-import './App.css'
+import { Button } from "~/components/ui/button"
+import './app.css'
 
 function App() {
   const [greetMsg, setGreetMsg] = createSignal('')
@@ -43,7 +44,7 @@ function App() {
           onChange={e => setName(e.currentTarget.value)}
           placeholder="Enter a name..."
         />
-        <button type="submit">Greet</button>
+        <Button type='submit'>Greet</Button>
       </form>
 
       <p>{greetMsg()}</p>

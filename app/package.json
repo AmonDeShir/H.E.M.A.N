@@ -16,16 +16,22 @@
   },
   "license": "MIT",
   "dependencies": {
+    "@kobalte/core": "^0.13.4",
     "@tauri-apps/api": ">=2.0.0-rc.0",
     "@tauri-apps/plugin-shell": ">=2.0.0-rc.0",
     "bun-types": "^1.1.24",
-    "solid-js": "^1.7.8"
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.1.1",
+    "postcss": "^8.4.41",
+    "solid-js": "^1.7.8",
+    "tailwind-merge": "^2.5.2",
+    "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
     "@eslint/js": "^9.9.0",
     "@ianvs/prettier-plugin-sort-imports": "^4.3.1",
     "@tauri-apps/cli": ">=2.0.0-rc.0",
-    "@types/node": "^20.15.0",
+    "@types/node": "^22.4.0",
     "autoprefixer": "^10.4.20",
     "eslint": "^9.9.0",
     "eslint-config-prettier": "^9.1.0",
