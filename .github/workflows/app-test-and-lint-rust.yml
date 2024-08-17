@@ -1,4 +1,4 @@
-name: API Test & lint JS codebase
+name: API Test & lint Rust codebase
 
 on:
   workflow_dispatch:
