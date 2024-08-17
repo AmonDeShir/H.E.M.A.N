@@ -36,7 +36,7 @@ jobs:
       - name: Rust cache
         uses: swatinem/rust-cache@v2
         with:
-          workspaces: './target'
+          workspaces: './app/src-tauri/target'
 
       - name: Install linter
         run: rustup component add clippy
