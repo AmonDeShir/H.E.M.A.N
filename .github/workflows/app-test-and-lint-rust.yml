@@ -42,9 +42,7 @@ jobs:
         run: rustup component add clippy
 
       - name: Run Rust Linter
-        uses: actions-rs/clippy-check@v1
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+        run: cargo clippy
 
       - name: Run Rust Tests
         run: cargo test
