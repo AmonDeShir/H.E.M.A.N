@@ -2,7 +2,7 @@ version: 2
 
 updates:
   - package-ecosystem: composer
-    directory: "/api/"
+    directory: "/api"
     schedule:
       interval: monthly
       time: "06:30"
@@ -13,7 +13,7 @@ updates:
     open-pull-requests-limit: 1
 
   - package-ecosystem: npm
-    directory: "/api/"
+    directory: "/api"
     schedule:
       interval: monthly
       time: "06:30"
@@ -24,7 +24,7 @@ updates:
     open-pull-requests-limit: 1
 
   - package-ecosystem: npm
-    directory: "/app/src-tauri"
+    directory: "/app"
     schedule:
       interval: monthly
       time: "06:30"
@@ -57,7 +57,7 @@ updates:
     open-pull-requests-limit: 1
 
   - package-ecosystem: cargo
-    directory: "/app/"
+    directory: "/app/src-tauri"
     schedule:
       interval: monthly
       time: "06:30"
