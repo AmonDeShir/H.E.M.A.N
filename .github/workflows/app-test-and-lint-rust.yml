@@ -6,14 +6,14 @@ on:
     branches: [ "main" ]
     types: [opened, synchronize, reopened, ready_for_review]
     paths:
-      - '/app/src-tauri/**.rs'
-      - '/app/src-tauri/Cargo.toml'
-      - '/app/src-tauri/Cargo.lock'
-      - '/app/src-tauri/tauri-conf.json'
+      - './app/src-tauri/**.rs'
+      - './app/src-tauri/Cargo.toml'
+      - './app/src-tauri/Cargo.lock'
+      - './app/src-tauri/tauri-conf.json'
 
 defaults:
   run:
-    working-directory: /src-tauri
+    working-directory: ./app/src-tauri
 
 jobs:
   test-and-lint-js:

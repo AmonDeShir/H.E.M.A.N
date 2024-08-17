@@ -6,14 +6,14 @@ on:
     branches: [ "main" ]
     types: [opened, synchronize, reopened, ready_for_review]
     paths:
-      - '/app/**.js'
-      - '/app/**.ts'
-      - '/app/package.json'
-      - '/app/bun.lockb'
+      - './app/**.js'
+      - './app/**.ts'
+      - './app/package.json'
+      - './app/bun.lockb'
 
 defaults:
   run:
-    working-directory: /app
+    working-directory: ./app
 
 jobs:
   test-and-lint-js:
