@@ -1,0 +1,49 @@
+name: API Test & lint JS codebase
+
+on:
+  pull_request:
+    branches: [ "main" ]
+    types: [opened, synchronize, reopened, ready_for_review]
+    paths:
+      - '/app/src-tauri/**.rs'
+      - '/app/src-tauri/Cargo.toml'
+      - '/app/src-tauri/Cargo.lock'
+      - '/app/src-tauri/tauri-conf.json'
+
+defaults:
+  run:
+    working-directory: ./src-tauri
+
+jobs:
+  test-and-lint-js:
+    name: Test & lint Rust codebase
+    timeout-minutes: 10
+    if: github.event.pull_request.draft == false
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4.1.4 # https://github.com/actions/checkout
+
+      - name: install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libwebkit2gtk-4.1-dev libappindicator3-dev librsvg2-dev patchelf
+
+      - name: install Rust stable
+        uses: dtolnay/rust-toolchain@stable # Set this to dtolnay/rust-toolchain@nightly
+
+      - name: Rust cache
+        uses: swatinem/rust-cache@v2
+        with:
+          workspaces: './target'
+
+      - name: Install linter
+        run: rustup component add clippy
+
+      - name: Run Rust Linter
+        uses: actions-rs/clippy-check@v1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Run Rust Tests
+        run: cargo test

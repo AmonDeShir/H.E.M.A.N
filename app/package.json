@@ -8,18 +8,35 @@
     "dev": "vite",
     "build": "vite build",
     "serve": "vite preview",
-    "tauri": "tauri"
+    "tauri": "tauri",
+    "prettier": "prettier src -c",
+    "prettierf": "prettier src -w",
+    "lint": "eslint src",
+    "lintf": "eslint src --fix"
   },
   "license": "MIT",
   "dependencies": {
-    "solid-js": "^1.7.8",
     "@tauri-apps/api": ">=2.0.0-rc.0",
-    "@tauri-apps/plugin-shell": ">=2.0.0-rc.0"
+    "@tauri-apps/plugin-shell": ">=2.0.0-rc.0",
+    "bun-types": "^1.1.24",
+    "solid-js": "^1.7.8"
   },
   "devDependencies": {
+    "@eslint/js": "^9.9.0",
+    "@ianvs/prettier-plugin-sort-imports": "^4.3.1",
+    "@tauri-apps/cli": ">=2.0.0-rc.0",
+    "@types/node": "^20.15.0",
+    "autoprefixer": "^10.4.20",
+    "eslint": "^9.9.0",
+    "eslint-config-prettier": "^9.1.0",
+    "prettier": "^3.3.3",
+    "prettier-eslint-cli": "^8.0.1",
+    "prettier-plugin-tailwindcss": "^0.6.6",
+    "tailwindcss": "^3.4.10",
     "typescript": "^5.2.2",
+    "typescript-eslint": "^8.1.0",
     "vite": "^5.3.1",
-    "vite-plugin-solid": "^2.8.0",
-    "@tauri-apps/cli": ">=2.0.0-rc.0"
-  }
+    "vite-plugin-solid": "^2.8.0"
+  },
+  "module": "index.ts"
 }

@@ -1,15 +1,15 @@
-name: Test & lint PHP codebase
+name: API Test & lint PHP codebase
 
 on:
   pull_request:
     branches: [ "main" ]
     types: [opened, synchronize, reopened, ready_for_review]
     paths:
-      - '**.php'
-      - 'composer.json'
-      - 'composer.lock'
-      - 'phpunit.xml'
-      - 'env.ci'
+      - '/api/**.php'
+      - '/api/composer.json'
+      - '/api/composer.lock'
+      - '/api/phpunit.xml'
+      - '/api/env.ci'
 
 defaults:
   run:

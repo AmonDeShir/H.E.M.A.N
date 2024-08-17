@@ -1,0 +1,45 @@
+name: API Test & lint JS codebase
+
+on:
+  pull_request:
+    branches: [ "main" ]
+    types: [opened, synchronize, reopened, ready_for_review]
+    paths:
+      - '/app/**.js'
+      - '/app/**.ts'
+      - '/app/package.json'
+      - '/app/bun.lockb'
+
+defaults:
+  run:
+    working-directory: ./app
+
+jobs:
+  test-and-lint-js:
+    name: Test & lint JS codebase
+    timeout-minutes: 10
+    if: github.event.pull_request.draft == false
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4.1.4 # https://github.com/actions/checkout
+
+      - name: Set up node
+        uses: actions/setup-node@v4.0.2 # https://github.com/actions/setup-node
+        with:
+          node-version: lts/*
+
+      - name: Set up bun
+        uses: oven-sh/setup-bun@v2
+
+      - name: Instal bun dependencies
+        run: bun install
+
+      - name: Run JS prettier
+        run: bun run prettier
+
+      - name: Run JS linter
+        run: bun run lint
+
+      - name: Run JS tests
+        run: bun test
