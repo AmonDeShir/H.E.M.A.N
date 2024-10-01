@@ -22,7 +22,7 @@ jobs:
 
     runs-on: ${{ matrix.platform }}
     steps:
-      - uses: actions/checkout@v4.1.4 # https://github.com/actions/checkout
+      - uses: actions/checkout@v4.2.0 # https://github.com/actions/checkout
       
       - name: install dependencies (ubuntu only)
         if: matrix.platform == 'ubuntu-22.04' # This must match the platform value defined above.
