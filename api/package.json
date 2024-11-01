@@ -19,7 +19,7 @@
         "vue": "^3.4.21"
     },
     "devDependencies": {
-        "@blumilksoftware/eslint-config": "^2.0.0",
+        "@blumilksoftware/eslint-config": "^3.0.0",
         "@typescript-eslint/eslint-plugin": "^8.1.0",
         "@vitejs/plugin-vue": "^5.0.4",
         "autoprefixer": "^10.4.19",
